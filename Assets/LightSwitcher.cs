@@ -23,7 +23,7 @@ public class LightSwitcher : MonoBehaviour
             directionalLight.intensity = dayIntensity;
         }
         // turn this off for testing purposes
-        isNight = !isNight;
+        //isNight = !isNight;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,6 +35,6 @@ public class LightSwitcher : MonoBehaviour
     void Update()
     {	
 	// turn this on for testing purposes
-        //ToggleLight();
+        ToggleLight();
     }
 }
