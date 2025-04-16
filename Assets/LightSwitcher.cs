@@ -22,9 +22,27 @@ public class LightSwitcher : MonoBehaviour
             directionalLight.color = dayColor;
             directionalLight.intensity = dayIntensity;
         }
-        // turn this off for testing purposes
-        //isNight = !isNight;
+        
+        isNight = !isNight;
     }
+
+    #if UNITY_EDITOR
+        private void OnValidate()
+        {
+            if (isNight)
+            {
+                directionalLight.color = nightColor;
+                directionalLight.intensity = nightIntensity;
+            }
+            else
+            {
+                directionalLight.color = dayColor;
+                directionalLight.intensity = dayIntensity;
+            }
+
+        }
+    #endif
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,7 +52,6 @@ public class LightSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {	
-	// turn this on for testing purposes
-        ToggleLight();
+
     }
 }
